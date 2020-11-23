@@ -1,9 +1,6 @@
 ---
-# This role contains common tasks that will run on all RHEL nodes to make sure they comply.
+name: this playbook verifies and fixes settings on RHEL machines
 hosts: all
-
-- include_role:
-    name: geerlingguy.ntp
 
 - name: Start the firewalld service
   service:
