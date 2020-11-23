@@ -3,13 +3,14 @@
   hosts: all
   become: yes
 
-- name: Start the firewalld service
-  service:
-    name: firewalld
-    state: started
-    enabled: true
+  tasks:
+  - name: Start the firewalld service
+    service:
+      name: firewalld
+      state: started
+      enabled: true
 
-- name: Make sure selinux is running
-  selinux:
-    policy: targeted
-    state: enforcing
+  - name: Make sure selinux is running
+    selinux:
+      policy: targeted
+      state: enforcing
