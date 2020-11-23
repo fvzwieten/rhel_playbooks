@@ -1,6 +1,7 @@
 ---
 name: this playbook verifies and fixes settings on RHEL machines
 hosts: all
+become: yes
 
 - name: Start the firewalld service
   service:
