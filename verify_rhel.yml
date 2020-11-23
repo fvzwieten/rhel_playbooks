@@ -1,1 +1,17 @@
+---
+# This role contains common tasks that will run on all RHEL nodes to make sure they comply.
+hosts: all
 
+- include_role:
+    name: geerlingguy.ntp
+
+- name: Start the firewalld service
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Make sure selinux is running
+  selinux:
+    policy: targeted
+    state: enforcing
