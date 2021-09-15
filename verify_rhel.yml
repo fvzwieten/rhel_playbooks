@@ -1,6 +1,6 @@
 ---
 - name: this playbook verifies and fixes settings on RHEL machines
-  hosts: all
+  hosts: "RHEL machines"
   become: yes
 
   tasks:
